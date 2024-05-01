@@ -157,7 +157,7 @@ function Tasks() {
             icon={<Icon id={"Nova"} open={open} />}
           >
             <AccordionHeader onClick={() => handleOpen("Nova")}>
-              + Nova Tarefa
+              + Nova Tarefa (alt git)
             </AccordionHeader>
             <AccordionBody>
               <form onSubmit={handleSubmit}>
