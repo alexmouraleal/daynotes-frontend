@@ -101,7 +101,7 @@ textarea {
   align-items: flex-start;
   justify-content: flex-start;
   white-space: break-spaces;
-  width: 600px;
+  width: 100%;
   padding: 10px;
   margin: 20 20 20 20;
   background-color: #fff;
@@ -118,7 +118,7 @@ textarea {
   align-self: flex-end;
   align-content: flex-start;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 50%;
   padding: 5px;
   background-color: #fff;
@@ -172,6 +172,13 @@ textarea {
   background-color: transparent;
 }
 
+.btn-action {
+  width: "80px";
+  padding: "14px 4px 4px 4px";
+  height: "140px";
+  margin: "40px 4px 4px 4px";
+}
+
 .input-line {
   height: 30px;
   border: solid 1px #c9c9c9;
@@ -182,8 +189,8 @@ textarea {
   color: #666;
 }
 
-.label-line {
-  height: 30px;
+.btn-line {
+  height: 40px;
   width: 100%;
   border: solid 1px #c9c9c9;
   border-radius: 7px;
@@ -196,23 +203,23 @@ textarea {
 }
 
 .color-A {
-  background-color: orange;
-  border: solid 1px orange;
-  color: #fff;
+  background-color: #ffc107;
+  border: solid 1px #ffc107;
+  color: black;
 }
 .color-C {
-  background-color: green;
-  border: solid 1px green;
+  background-color: #4caf50;
+  border: solid 1px #4caf50;
   color: #fff;
 }
 .color-P {
-  background-color: purple;
-  border: solid 1px purple;
+  background-color: #9c27b0;
+  border: solid 1px #9c27b0;
   color: #fff;
 }
 .color-N {
-  background-color: orangered;
-  border: solid 1px orangered;
+  background-color: #f44336;
+  border: solid 1px #f44336;
   color: #fff;
 }
 
