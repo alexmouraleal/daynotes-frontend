@@ -131,10 +131,11 @@ function Tasks() {
           <Button
             color="amber"
             style={{
-              width: "70px",
+              width: "60px",
               padding: "4px 4px 4px 4px",
               height: "60px",
-              margin: "4px 4px 4px 4px",
+              margin: "2px 2px 2px 2px",
+              fontSize: "10px",
             }}
             onClick={() => handleUpdateStatus(actiondia, actionid, "A")}
           >
@@ -143,10 +144,11 @@ function Tasks() {
           <Button
             color="green"
             style={{
-              width: "70px",
+              width: "60px",
               padding: "4px 4px 4px 4px",
               height: "60px",
-              margin: "4px 4px 4px 4px",
+              margin: "2px 2px 2px 2px",
+              fontSize: "10px",
             }}
             onClick={() => handleUpdateStatus(actiondia, actionid, "C")}
           >
@@ -155,10 +157,11 @@ function Tasks() {
           <Button
             color="purple"
             style={{
-              width: "70px",
+              width: "60px",
               padding: "4px 4px 4px 4px",
               height: "60px",
-              margin: "4px 4px 4px 4px",
+              margin: "2px 2px 2px 2px",
+              fontSize: "10px",
             }}
             onClick={() => handleUpdateStatus(actiondia, actionid, "P")}
           >
@@ -167,10 +170,11 @@ function Tasks() {
           <Button
             color="red"
             style={{
-              width: "70px",
+              width: "60px",
               padding: "4px 4px 4px 4px",
               height: "60px",
-              margin: "4px 4px 4px 4px",
+              margin: "2px 2px 2px 2px",
+              fontSize: "10px",
             }}
             onClick={() => handleUpdateStatus(actiondia, actionid, "N")}
           >
@@ -179,10 +183,11 @@ function Tasks() {
           <Button
             color="black"
             style={{
-              width: "70px",
+              width: "60px",
               padding: "4px 4px 4px 4px",
               height: "60px",
-              margin: "4px 4px 4px 4px",
+              margin: "2px 2px 2px 2px",
+              fontSize: "10px",
             }}
             onClick={() => handleDelete(actiondia, actionid)}
           >
@@ -270,13 +275,15 @@ function Tasks() {
                       onChange={(e) => setHrexec(e.target.value)}
                     />
                   </div>
+                </div>
+                <div className="div-side">
                   <div className="div-side-item">
                     <input
                       type="text"
                       id="description"
                       value={description}
                       maxLength="100"
-                      size="19"
+                      size="24"
                       required
                       placeholder="Tarefa"
                       onChange={(e) => setDescription(e.target.value)}

@@ -37,30 +37,32 @@ function Task({ data, handleActions }) {
   return (
     <>
       <div className="div-side">
-        <div className="div-side-item" style={{ width: "22%" }}>
+        <div className="div-side-item" style={{ width: "20%" }}>
           <input
             id={"hrexec".concat(data._id)}
             defaultValue={data.hrexec}
             type="time"
             required
+            className="input-line"
             onChange={(e) => setChangedHrExec(e.target.value)}
             onBlur={(e) => handleUpdate(data)}
           />
         </div>
-        <div className="div-side-item" style={{ width: "70%" }}>
+        <div className="div-side-item" style={{ width: "40%" }}>
           <input
             id={"description".concat(data._id)}
             defaultValue={data.description}
             type="text"
             maxLength="100"
-            size="30"
+            size="20"
             required
+            className="input-line"
             onChange={(e) => setChangedDescription(e.target.value)}
             onBlur={(e) => handleUpdate(data)}
           />
         </div>
 
-        <div className="div-side-item" style={{ width: "30%" }}>
+        <div className="div-side-item" style={{ width: "40%" }}>
           <Button
             className={"flex items-center gap-1 h-10 p-2 w-full  color-".concat(
               data.status
