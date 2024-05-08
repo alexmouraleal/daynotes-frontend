@@ -169,7 +169,7 @@ textarea {
   padding: 1px;
   order: 0;
   margin: 2;
-  background-color: transparent;
+  background-color: lime;
 }
 
 .btn-action {
@@ -180,13 +180,28 @@ textarea {
 }
 
 .input-line {
-  height: 30px;
+  height: 36px;
   border: solid 1px #c9c9c9;
-  border-radius: 8px;
-  padding: 5px;
+  border-radius: 4px;
+  padding: 3px;
   background-color: white;
-  font-size: 12px;
+  font-size: 10px;
   color: #666;
+  width: auto;
+  margin: 2px;
+}
+
+.textarea-line {
+  height: 36px;
+  width: auto;
+  border: solid 1px #c9c9c9;
+  border-radius: 4px;
+  padding: 3px;
+  background-color: white;
+  font-size: 10px;
+  color: #666;
+  margin: 2px;
+  vertical-align: middle;
 }
 
 .btn-line {
