@@ -48,23 +48,21 @@ function Task({ data, handleActions }) {
             onBlur={(e) => handleUpdate(data)}
           />
         </div>
-        <div className="div-side-item" style={{ width: "40%" }}>
-          <input
+        <div className="div-side-item" style={{ width: "60%" }}>
+          <textarea
             id={"description".concat(data._id)}
             defaultValue={data.description}
-            type="text"
-            maxLength="100"
-            size="20"
-            required
-            className="input-line"
+            rows="3"
+            cols="30"
+            className="textarea-line"
             onChange={(e) => setChangedDescription(e.target.value)}
             onBlur={(e) => handleUpdate(data)}
-          />
+          ></textarea>
         </div>
 
-        <div className="div-side-item" style={{ width: "40%" }}>
+        <div className="div-side-item" style={{ width: "20%" }}>
           <Button
-            className={"flex items-center gap-1 h-10 p-2 w-full  color-".concat(
+            className={"flex items-center gap-1 h-9 p-2 w-full  color-".concat(
               data.status
             )}
             onClick={() => handleActions(data.dayexec, data._id)}
