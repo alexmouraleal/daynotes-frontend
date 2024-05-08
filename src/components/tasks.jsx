@@ -130,65 +130,35 @@ function Tasks() {
         <div className="divicons" style={{ width: "100%" }}>
           <Button
             color="amber"
-            style={{
-              width: "60px",
-              padding: "4px 4px 4px 4px",
-              height: "60px",
-              margin: "2px 2px 2px 2px",
-              fontSize: "10px",
-            }}
+            className="btn-action"
             onClick={() => handleUpdateStatus(actiondia, actionid, "A")}
           >
-            Aguardo
+            Ag.
           </Button>
           <Button
             color="green"
-            style={{
-              width: "60px",
-              padding: "4px 4px 4px 4px",
-              height: "60px",
-              margin: "2px 2px 2px 2px",
-              fontSize: "10px",
-            }}
+            className="btn-action"
             onClick={() => handleUpdateStatus(actiondia, actionid, "C")}
           >
             OK
           </Button>
           <Button
             color="purple"
-            style={{
-              width: "60px",
-              padding: "4px 4px 4px 4px",
-              height: "60px",
-              margin: "2px 2px 2px 2px",
-              fontSize: "10px",
-            }}
+            className="btn-action"
             onClick={() => handleUpdateStatus(actiondia, actionid, "P")}
           >
             Parcial
           </Button>
           <Button
             color="red"
-            style={{
-              width: "60px",
-              padding: "4px 4px 4px 4px",
-              height: "60px",
-              margin: "2px 2px 2px 2px",
-              fontSize: "10px",
-            }}
+            className="btn-action"
             onClick={() => handleUpdateStatus(actiondia, actionid, "N")}
           >
             Falhou
           </Button>
           <Button
             color="black"
-            style={{
-              width: "60px",
-              padding: "4px 4px 4px 4px",
-              height: "60px",
-              margin: "2px 2px 2px 2px",
-              fontSize: "10px",
-            }}
+            className="btn-action"
             onClick={() => handleDelete(actiondia, actionid)}
           >
             Excluir
@@ -257,7 +227,7 @@ function Tasks() {
                       id="dayexec"
                       value={dayexec}
                       maxLength="3"
-                      size="10"
+                      size="8"
                       required
                       placeholder="Dia ( Ex. SEG )"
                       onChange={(e) => setDayexec(e.target.value)}
@@ -269,7 +239,7 @@ function Tasks() {
                       id="hrexec"
                       value={hrexec}
                       maxLength="5"
-                      size="9"
+                      size="5"
                       required
                       //placeholder="Hora (00:00)"
                       onChange={(e) => setHrexec(e.target.value)}
@@ -283,7 +253,7 @@ function Tasks() {
                       id="description"
                       value={description}
                       maxLength="100"
-                      size="24"
+                      size="23"
                       required
                       placeholder="Tarefa"
                       onChange={(e) => setDescription(e.target.value)}
