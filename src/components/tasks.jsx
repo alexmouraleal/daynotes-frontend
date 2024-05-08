@@ -169,6 +169,7 @@ function Tasks() {
       return <></>;
     }
   }
+
   function listTaskDia(dia) {
     const daytasks = allTasks.filter((data) => data.dayexec === dia);
     return (
@@ -205,6 +206,95 @@ function Tasks() {
         </React.Fragment>
       );
     }
+  }
+
+  function listPoints() {
+    let tasks = 0;
+    let tasksOk = 0;
+
+    let tasksSeg = 0;
+    let tasksTer = 0;
+    let tasksQua = 0;
+    let tasksQui = 0;
+    let tasksSex = 0;
+    let tasksSab = 0;
+    let tasksDom = 0;
+
+    let tasksOkSeg = 0;
+    let tasksOkTer = 0;
+    let tasksOkQua = 0;
+    let tasksOkQui = 0;
+    let tasksOkSex = 0;
+    let tasksOkSab = 0;
+    let tasksOkDom = 0;
+
+    const vtSeg = allTasks.map((data) => {
+      switch (data.dayexec) {
+        case "SEG":
+          tasksSeg++;
+          if (data.status === "C") {
+            tasksOkSeg++;
+          }
+          break;
+        case "TER":
+          tasksTer++;
+          if (data.status === "C") {
+            tasksOkTer++;
+          }
+          break;
+        case "QUA":
+          tasksQua++;
+          if (data.status === "C") {
+            tasksOkQua++;
+          }
+          break;
+        case "QUI":
+          tasksQui++;
+          if (data.status === "C") {
+            tasksOkQui++;
+          }
+          break;
+        case "SEX":
+          tasksSex++;
+          if (data.status === "C") {
+            tasksOkSex++;
+          }
+          break;
+        case "SAB":
+          tasksSab++;
+          if (data.status === "C") {
+            tasksOkSab++;
+          }
+          break;
+        case "DOM":
+          tasksDom++;
+          if (data.status === "C") {
+            tasksOkDom++;
+          }
+          break;
+        default:
+        // code block
+      }
+
+      tasks++;
+      if (data.status === "C") {
+        tasksOk++;
+      }
+    });
+
+    return (
+      <React.Fragment>
+        <div className="div-side-item">
+          <b>SEG</b> - OK ({tasksOkSeg} / {tasksSeg})
+        </div>
+        <div className="div-side-item">
+          <b>TER</b> - OK ({tasksOkTer} / {tasksTer})
+        </div>
+        <div className="div-side-item">
+          <b>GERAL</b> - OK ({tasksOk} / {tasks})
+        </div>
+      </React.Fragment>
+    );
   }
 
   return (
@@ -278,6 +368,18 @@ function Tasks() {
             </AccordionBody>
           </Accordion>
           {listTasks()}
+
+          <Accordion
+            open={open === "Pontos"}
+            icon={<Icon id={"Pontos"} open={open} />}
+          >
+            <AccordionHeader onClick={() => handleOpen("Pontos")}>
+              Pontuação da Semana
+            </AccordionHeader>
+            <AccordionBody>
+              <>{listPoints()}</>
+            </AccordionBody>
+          </Accordion>
         </div>
         <br></br>
       </div>
