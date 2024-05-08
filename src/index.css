@@ -221,25 +221,25 @@ textarea {
   background-color: #ffc107;
   border: solid 1px #ffc107;
   color: black;
-  font-size: 9px;
+  font-size: 7px;
 }
 .color-C {
   background-color: #4caf50;
   border: solid 1px #4caf50;
   color: #fff;
-  font-size: 10px;
+  font-size: 7px;
 }
 .color-P {
   background-color: #9c27b0;
   border: solid 1px #9c27b0;
   color: #fff;
-  font-size: 9px;
+  font-size: 7px;
 }
 .color-N {
   background-color: #f44336;
   border: solid 1px #f44336;
   color: #fff;
-  font-size: 10px;
+  font-size: 7px;
   text-align: center;
 }
 
