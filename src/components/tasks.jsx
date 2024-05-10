@@ -302,14 +302,14 @@ function Tasks() {
             <Badge color="light-blue" content={esperado} className="mr-4">
               <Chip
                 color="black"
-                value="Pontos Esperados"
+                value="Pts. Esperados"
                 className="mr-4 rounded-full"
               />
             </Badge>
             <Badge color="light-blue" content={alcancado} className="mr-4">
               <Chip
                 color="black"
-                value="Pontos Alcançados"
+                value="Pts. Alcançados"
                 className="mr-4 rounded-full"
               />
             </Badge>
