@@ -107,13 +107,14 @@ function Tasks() {
   }
 
   async function handleNovaSemana() {
-    // const deletedTask = await api.delete(`/tasks/${id}`, {});
-    // if (deletedTask.data.taskDeleted) {
-    //   setAllTasks(allTasks.filter((task) => task._id !== id));
-    // }
-    // setActionid("");
-    // setActiondia("");
-    // setOpen(dia);
+    const response = await api.post(`/taskswkreset`, {});
+    if (response.data.taskStatusWkReset) {
+      const response = await api.get("/tasks");
+      setAllTasks(response.data.taskReaded);
+    }
+    setActionid("");
+    setActiondia("");
+    setOpen("Pontos");
   }
 
   async function handleUpdateStatus(dia, id, status) {
@@ -239,7 +240,7 @@ function Tasks() {
 
     return (
       <React.Fragment>
-        {vtPoints.map((data) => (
+        {/* {vtPoints.map((data) => (
           <div className="div-side-item marginb4">
             <div className="flex gap-2 align-middle">
               <Chip variant="outlined" value={data.dia} className="mr-4" />
@@ -255,26 +256,41 @@ function Tasks() {
               </Badge>
             </div>
           </div>
-        ))}
+        ))} */}
 
         <div className="div-side-item marginb4">
-          <hr></hr>
+          {/* <hr></hr>
           <br></br>
           Totais
           <br></br>
-          <br></br>
+          <br></br> */}
           <div className="flex gap-2 align-middle">
             <Badge color="light-blue" content={totTasks} className="mr-4">
-              <Chip color="black" value="Tarefas" className="mr-4" />
+              <Chip
+                color="black"
+                value="Tarefas"
+                className="mr-4 rounded-full"
+              />
             </Badge>
-            <Badge color="green" content={totTasksC} className="mr-4">
-              <Chip color="black" value="Concluídas" className="mr-4" />
+            <Badge color="blue" content={totTasksC} className="mr-4">
+              <Chip
+                color="green"
+                value="Concluídas"
+                className="mr-4 rounded-full"
+              />
             </Badge>
-            <Badge color="purple" content={totTasksP} className="mr-4">
-              <Chip color="black" value="Parcial" className="mr-4" />
+          </div>
+          <br></br>
+          <div className="flex gap-2 align-middle">
+            <Badge color="blue" content={totTasksP} className="mr-4 ">
+              <Chip
+                color="purple"
+                value="Parcial"
+                className="mr-4 rounded-full"
+              />
             </Badge>
-            <Badge color="red" content={totTasksN} className="mr-4">
-              <Chip color="black" value="Falhou" className="mr-4" />
+            <Badge color="blue" content={totTasksN} className="mr-4">
+              <Chip color="red" value="Falhou" className="mr-4 rounded-full" />
             </Badge>
           </div>
         </div>
@@ -284,42 +300,45 @@ function Tasks() {
           <br></br>
           <div className="flex gap-2 align-middle">
             <Badge color="light-blue" content={esperado} className="mr-4">
-              <Chip color="black" value="Esperado" className="mr-4" />
+              <Chip
+                color="black"
+                value="Pontos Esperados"
+                className="mr-4 rounded-full"
+              />
             </Badge>
             <Badge color="light-blue" content={alcancado} className="mr-4">
-              <Chip color="black" value="Alcançado" className="mr-4" />
+              <Chip
+                color="black"
+                value="Pontos Alcançados"
+                className="mr-4 rounded-full"
+              />
             </Badge>
-            <Chip color="blue" value={txtpercsem} className="mr-4" />
+          </div>
+          <br></br>
+          <div className="flex gap-2 align-middle">
+            <Chip
+              color="blue"
+              value={txtpercsem}
+              className="mr-4 rounded-full"
+            />
           </div>
         </div>
 
         <div className="div-side-item marginb4">
-          <hr></hr>
-          <br></br>
-          <div className="flex gap-2 align-middle">
-            <Badge color="light-blue" content={esperado} className="mr-4">
-              <Chip color="black" value="Esperado" className="mr-4" />
-            </Badge>
-            <Badge color="light-blue" content={alcancado} className="mr-4">
-              <Chip color="black" value="Alcançado" className="mr-4" />
-            </Badge>
-            <Chip color="blue" value={txtpercsem} className="mr-4" />
-          </div>
-          <br></br>
           <div className="flex gap-2 align-middle">
             <Avatar
               src="https://c3.klipartz.com/pngpicture/1005/48/sticker-png-meme-cry-2-crying-memes-illustration.png"
-              size="xxl"
+              size="xl"
               className={avataropacity3}
             />
             <Avatar
               src="https://www.shutterstock.com/image-photo/closeup-20-reais-banknotes-brazil-260nw-2186096491.jpg"
-              size="xxl"
+              size="xl"
               className={avataropacity2}
             />
             <Avatar
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTpj7RuwArFJJZTVw_StzBEtFR5FdV9wtBy1tfMsb9Pw&s"
-              size="xxl"
+              size="xl"
               className={avataropacity1}
             />
           </div>
@@ -583,7 +602,6 @@ function Tasks() {
             </AccordionHeader>
             <AccordionBody>
               <>{getPoints()}</>
-              {/* <>{listPremios()}</> */}
             </AccordionBody>
           </Accordion>
         </div>
